@@ -12,5 +12,10 @@ class FakeHttpsCallable extends Mock implements HttpsCallable {
           returnValue: Future.value(FakeHttpsCallableResult<T>()));
 }
 
-class FakeHttpsCallableResult<T> extends Fake
-    implements HttpsCallableResult<T> {}
+class FakeHttpsCallableResult<T> extends Mock
+    implements HttpsCallableResult<T> {
+  @override
+  T get data => super.noSuchMethod(
+        Invocation.getter(#data),
+      );
+}
