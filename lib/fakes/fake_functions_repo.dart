@@ -15,6 +15,7 @@ class FakeHttpsCallable extends Mock implements HttpsCallable {
 class FakeHttpsCallableResult<T> extends Mock
     implements HttpsCallableResult<T> {
   @override
+  // ignore: invalid_use_of_visible_for_testing_member
   T get data => super.noSuchMethod(
         Invocation.getter(#data),
       );

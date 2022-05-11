@@ -68,12 +68,12 @@ class FakeFlutterLocalNotificationsPlugin
     implements FlutterLocalNotificationsPlugin {
   @override
   Future<void> cancel(int id, {String? tag}) {
-    return Future.value(null);
+    return Future.value();
   }
 
   @override
   Future<void> cancelAll() {
-    return Future.value(null);
+    return Future.value();
   }
 
   @override
@@ -85,7 +85,7 @@ class FakeFlutterLocalNotificationsPlugin
   @override
   Future<bool?> initialize(InitializationSettings initializationSettings,
       {SelectNotificationCallback? onSelectNotification}) {
-    return Future.value(null);
+    return Future.value();
   }
 
   @override
@@ -97,7 +97,7 @@ class FakeFlutterLocalNotificationsPlugin
   Future<void> periodicallyShow(int id, String? title, String? body,
       RepeatInterval repeatInterval, NotificationDetails notificationDetails,
       {String? payload, bool androidAllowWhileIdle = false}) {
-    return Future.value(null);
+    return Future.value();
   }
 
   @override
@@ -110,28 +110,28 @@ class FakeFlutterLocalNotificationsPlugin
   Future<void> schedule(int id, String? title, String? body,
       DateTime scheduledDate, NotificationDetails notificationDetails,
       {String? payload, bool androidAllowWhileIdle = false}) {
-    return Future.value(null);
+    return Future.value();
   }
 
   @override
   Future<void> show(int id, String? title, String? body,
       NotificationDetails? notificationDetails,
       {String? payload}) {
-    return Future.value(null);
+    return Future.value();
   }
 
   @override
   Future<void> showDailyAtTime(int id, String? title, String? body,
       Time notificationTime, NotificationDetails notificationDetails,
       {String? payload}) {
-    return Future.value(null);
+    return Future.value();
   }
 
   @override
   Future<void> showWeeklyAtDayAndTime(int id, String? title, String? body,
       Day day, Time notificationTime, NotificationDetails notificationDetails,
       {String? payload}) {
-    return Future.value(null);
+    return Future.value();
   }
 
   @override
@@ -142,7 +142,7 @@ class FakeFlutterLocalNotificationsPlugin
       required bool androidAllowWhileIdle,
       String? payload,
       DateTimeComponents? matchDateTimeComponents}) {
-    return Future.value(null);
+    return Future.value();
   }
 }
 
