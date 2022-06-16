@@ -53,7 +53,9 @@ class FakeCacheRepo extends Fake implements CacheRepository {
   void ignoreTypeId<T>(int typeId) {}
 
   @override
-  void init(String path) {}
+  void init(String? path,
+      {HiveStorageBackendPreference backendPreference =
+          HiveStorageBackendPreference.native}) {}
 
   @override
   bool isAdapterRegistered(int typeId) {
@@ -77,31 +79,40 @@ class FakeCacheRepo extends Fake implements CacheRepository {
   }
 
   @override
-  Future<Box<E>> openBox<E>(String name,
-      {HiveCipher? encryptionCipher,
-      KeyComparator keyComparator = defaultKeyComparator,
-      CompactionStrategy compactionStrategy = defaultCompactionStrategy,
-      bool crashRecovery = true,
-      String? path,
-      Uint8List? bytes,
-      List<int>? encryptionKey}) async {
+  Future<Box<E>> openBox<E>(
+    String name, {
+    HiveCipher? encryptionCipher,
+    KeyComparator keyComparator = defaultKeyComparator,
+    CompactionStrategy compactionStrategy = defaultCompactionStrategy,
+    bool crashRecovery = true,
+    String? path,
+    Uint8List? bytes,
+    List<int>? encryptionKey,
+    String? collection,
+  }) async {
     return boxes[name] = Box<E>(name);
   }
 
   @override
-  Future<LazyBox<E>> openLazyBox<E>(String name,
-      {HiveCipher? encryptionCipher,
-      KeyComparator keyComparator = defaultKeyComparator,
-      CompactionStrategy compactionStrategy = defaultCompactionStrategy,
-      bool crashRecovery = true,
-      String? path,
-      List<int>? encryptionKey}) async {
+  Future<LazyBox<E>> openLazyBox<E>(
+    String name, {
+    HiveCipher? encryptionCipher,
+    KeyComparator keyComparator = defaultKeyComparator,
+    CompactionStrategy compactionStrategy = defaultCompactionStrategy,
+    bool crashRecovery = true,
+    String? path,
+    List<int>? encryptionKey,
+    String? collection,
+  }) async {
     return boxes[name] = LazyBox<E>(name);
   }
 
   @override
-  void registerAdapter<T>(TypeAdapter<T> adapter,
-      {bool internal = false, bool override = false}) async {}
+  void registerAdapter<T>(
+    TypeAdapter<T> adapter, {
+    bool internal = false,
+    bool override = false,
+  }) async {}
 }
 
 class BoxBase<T> implements h.BoxBase<T> {
