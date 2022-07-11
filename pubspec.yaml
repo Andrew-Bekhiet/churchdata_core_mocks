@@ -24,7 +24,10 @@ dependencies:
   fake_cloud_firestore: ^1.2.2
   firebase_storage_mocks: ^0.5.0
   firebase_auth_mocks: ^0.8.2
-  firebase_database_mocks: ^0.3.2
+  firebase_database_mocks:
+    git:
+      url: https://github.com/OlegNovosad/firebase_database_mocks
+      ref: main
   google_sign_in_mocks: ^0.2.1
   network_image_mock: ^2.0.1
   mock_data: ^2.0.0
