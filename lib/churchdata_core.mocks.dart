@@ -131,8 +131,9 @@ class MockFirebaseMessaging extends _i1.Mock implements _i8.FirebaseMessaging {
       Invocation.method(#getToken, [], {#vapidKey: vapidKey}),
       returnValue: Future<String?>.value()) as _i9.Future<String?>);
   @override
-  bool isSupported() => (super.noSuchMethod(Invocation.method(#isSupported, []),
-      returnValue: false) as bool);
+  _i9.Future<bool> isSupported() =>
+      (super.noSuchMethod(Invocation.method(#isSupported, []),
+          returnValue: Future<bool>.value(false)) as _i9.Future<bool>);
   @override
   _i9.Future<_i5.NotificationSettings> getNotificationSettings() =>
       (super.noSuchMethod(Invocation.method(#getNotificationSettings, []),
