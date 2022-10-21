@@ -367,6 +367,16 @@ class MockFirebaseMessaging extends _i1.Mock implements _i8.FirebaseMessaging {
         returnValueForMissingStub: _i9.Future<void>.value(),
       ) as _i9.Future<void>);
   @override
+  _i9.Future<void> setDeliveryMetricsExportToBigQuery(bool? enabled) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #setDeliveryMetricsExportToBigQuery,
+          [enabled],
+        ),
+        returnValue: _i9.Future<void>.value(),
+        returnValueForMissingStub: _i9.Future<void>.value(),
+      ) as _i9.Future<void>);
+  @override
   _i9.Future<void> setForegroundNotificationPresentationOptions({
     bool? alert = false,
     bool? badge = false,
