@@ -4,7 +4,6 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i9;
-import 'dart:ui' as _i12;
 
 import 'package:cloud_functions/cloud_functions.dart' as _i4;
 import 'package:cloud_functions_platform_interface/cloud_functions_platform_interface.dart'
@@ -664,7 +663,7 @@ class MockFirebaseRemoteConfig extends _i1.Mock
         returnValueForMissingStub: _i9.Future<void>.value(),
       ) as _i9.Future<void>);
   @override
-  void addListener(_i12.VoidCallback? listener) => super.noSuchMethod(
+  void addListener(dynamic listener) => super.noSuchMethod(
         Invocation.method(
           #addListener,
           [listener],
@@ -672,7 +671,7 @@ class MockFirebaseRemoteConfig extends _i1.Mock
         returnValueForMissingStub: null,
       );
   @override
-  void removeListener(_i12.VoidCallback? listener) => super.noSuchMethod(
+  void removeListener(dynamic listener) => super.noSuchMethod(
         Invocation.method(
           #removeListener,
           [listener],
