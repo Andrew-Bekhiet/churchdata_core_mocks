@@ -1,6 +1,6 @@
 name: churchdata_core_mocks
 description: core library mocks for churchdata_core
-version: 0.3.0
+version: 0.4.0
 publish_to: "none"
 
 environment:
@@ -19,19 +19,19 @@ dependencies:
     git:
       url: https://github.com/Andrew-Bekhiet/churchdata_core
       ref: master
-  mockito: ^5.3.0
-  build_runner: ^2.2.0
-  copy_with_extension_gen: ^4.0.3
+  mockito: ^5.4.0
+  build_runner: ^2.3.3
+  copy_with_extension_gen: ^5.0.2
   hive_generator: ^2.0.0
   hive_test: ^1.0.1
-  fake_cloud_firestore: ^2.0.1
-  firebase_auth_mocks: ^0.9.0
-  firebase_storage_mocks: ^0.6.0+1
-  firebase_database_mocks:
+  fake_cloud_firestore: ^2.4.1+1
+  firebase_auth_mocks: ^0.11.0
+  firebase_storage_mocks: ^0.6.1
+  firebase_database_mocks: ^0.6.0
+  google_sign_in_mocks:
     git:
-      url: https://github.com/Seyun/firebase_database_mocks
-      ref: main
-  google_sign_in_mocks: ^0.2.1
+      url: https://github.com/miyaji555/google_sign_in_mocks
+      ref: 0c086c0ca2377c1961767f6df05bd28c14d7aa4a
   network_image_mock: ^2.1.1
   mock_data: ^2.0.0
 

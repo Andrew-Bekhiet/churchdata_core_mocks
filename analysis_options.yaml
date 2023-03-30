@@ -36,8 +36,6 @@ linter:
     file_names: true
     hash_and_equals: true
     implementation_imports: false
-    invariant_booleans: true
-    invalid_use_of_visible_for_testing_member: false
     iterable_contains_unrelated_type: true
     join_return_with_assignment: true
     library_names: true

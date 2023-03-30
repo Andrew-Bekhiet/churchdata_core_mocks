@@ -79,13 +79,24 @@ class FakeFlutterLocalNotificationsPlugin
   @override
   Future<NotificationAppLaunchDetails?> getNotificationAppLaunchDetails() {
     return Future.value(
-        const NotificationAppLaunchDetails(true, 'NotificationId'));
+      const NotificationAppLaunchDetails(
+        true,
+        notificationResponse: NotificationResponse(
+            notificationResponseType:
+                NotificationResponseType.selectedNotification,
+            payload: 'NotificationId'),
+      ),
+    );
   }
 
   @override
-  Future<bool?> initialize(InitializationSettings initializationSettings,
-      {SelectNotificationCallback? onSelectNotification}) {
-    return Future.value();
+  Future<bool?> initialize(
+    InitializationSettings initializationSettings, {
+    DidReceiveNotificationResponseCallback? onDidReceiveNotificationResponse,
+    DidReceiveBackgroundNotificationResponseCallback?
+        onDidReceiveBackgroundNotificationResponse,
+  }) async {
+    return Future.value(true);
   }
 
   @override
@@ -143,6 +154,11 @@ class FakeFlutterLocalNotificationsPlugin
       String? payload,
       DateTimeComponents? matchDateTimeComponents}) {
     return Future.value();
+  }
+
+  @override
+  Future<List<ActiveNotification>> getActiveNotifications() async {
+    return [];
   }
 }
 

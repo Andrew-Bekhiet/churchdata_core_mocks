@@ -19,7 +19,7 @@ import 'fakes/mock_storage_reference.dart';
   FirebaseFunctions,
   FirebaseMessaging,
   FirebaseDynamicLinks,
-  FirebaseRemoteConfig
+  FirebaseRemoteConfig,
 ])
 void registerFirebaseMocks() {
   FirebaseMessagingPlatform.instance = FakeFirebaseMessagingPlatform();

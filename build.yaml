@@ -1,0 +1,12 @@
+targets:
+  $default:
+    sources:
+      include:
+        - lib/**
+        - test/**
+        - $package$
+    builders:
+      mockito|mockBuilder:
+        enabled: true
+        generate_for:
+          - lib/**
