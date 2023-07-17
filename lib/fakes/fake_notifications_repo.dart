@@ -11,7 +11,7 @@ import 'package:timezone/timezone.dart';
 
 class FakeNotificationsService extends NotificationsService {
   factory FakeNotificationsService() {
-    TestDefaultBinaryMessengerBinding.instance!.defaultBinaryMessenger
+    TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMessageHandler(
       'dev.fluttercommunity.plus/android_alarm_manager',
       (_) async => const JSONMessageCodec().encodeMessage([true]),
@@ -105,9 +105,17 @@ class FakeFlutterLocalNotificationsPlugin
   }
 
   @override
-  Future<void> periodicallyShow(int id, String? title, String? body,
-      RepeatInterval repeatInterval, NotificationDetails notificationDetails,
-      {String? payload, bool androidAllowWhileIdle = false}) {
+  Future<void> periodicallyShow(
+    int id,
+    String? title,
+    String? body,
+    RepeatInterval repeatInterval,
+    NotificationDetails notificationDetails, {
+    String? payload,
+    @Deprecated('Deprecated in favor of the androidScheduleMode parameter')
+    bool androidAllowWhileIdle = false,
+    AndroidScheduleMode? androidScheduleMode,
+  }) {
     return Future.value();
   }
 
@@ -118,13 +126,6 @@ class FakeFlutterLocalNotificationsPlugin
   }
 
   @override
-  Future<void> schedule(int id, String? title, String? body,
-      DateTime scheduledDate, NotificationDetails notificationDetails,
-      {String? payload, bool androidAllowWhileIdle = false}) {
-    return Future.value();
-  }
-
-  @override
   Future<void> show(int id, String? title, String? body,
       NotificationDetails? notificationDetails,
       {String? payload}) {
@@ -132,27 +133,20 @@ class FakeFlutterLocalNotificationsPlugin
   }
 
   @override
-  Future<void> showDailyAtTime(int id, String? title, String? body,
-      Time notificationTime, NotificationDetails notificationDetails,
-      {String? payload}) {
-    return Future.value();
-  }
-
-  @override
-  Future<void> showWeeklyAtDayAndTime(int id, String? title, String? body,
-      Day day, Time notificationTime, NotificationDetails notificationDetails,
-      {String? payload}) {
-    return Future.value();
-  }
-
-  @override
-  Future<void> zonedSchedule(int id, String? title, String? body,
-      TZDateTime scheduledDate, NotificationDetails notificationDetails,
-      {required UILocalNotificationDateInterpretation
-          uiLocalNotificationDateInterpretation,
-      required bool androidAllowWhileIdle,
-      String? payload,
-      DateTimeComponents? matchDateTimeComponents}) {
+  Future<void> zonedSchedule(
+    int id,
+    String? title,
+    String? body,
+    TZDateTime scheduledDate,
+    NotificationDetails notificationDetails, {
+    required UILocalNotificationDateInterpretation
+        uiLocalNotificationDateInterpretation,
+    @Deprecated('Deprecated in favor of the androidScheduleMode parameter')
+    bool androidAllowWhileIdle = false,
+    AndroidScheduleMode? androidScheduleMode,
+    String? payload,
+    DateTimeComponents? matchDateTimeComponents,
+  }) {
     return Future.value();
   }
 
