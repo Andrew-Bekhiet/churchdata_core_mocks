@@ -36,11 +36,9 @@ linter:
     file_names: true
     hash_and_equals: true
     implementation_imports: false
-    iterable_contains_unrelated_type: true
     join_return_with_assignment: true
     library_names: true
     library_prefixes: true
-    list_remove_unrelated_type: true
     noop_primitive_operations: true
     no_duplicate_case_values: true
     no_logic_in_create_state: true
@@ -57,7 +55,6 @@ linter:
     prefer_const_declarations: true
     prefer_const_literals_to_create_immutables: true
     prefer_contains: true
-    prefer_equal_for_default_values: true
     prefer_final_fields: true
     prefer_final_in_for_each: true
     prefer_final_locals: true
