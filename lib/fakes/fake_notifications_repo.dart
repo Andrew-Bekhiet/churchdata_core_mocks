@@ -154,6 +154,17 @@ class FakeFlutterLocalNotificationsPlugin
   Future<List<ActiveNotification>> getActiveNotifications() async {
     return [];
   }
+
+  @override
+  Future<void> periodicallyShowWithDuration(
+    int id,
+    String? title,
+    String? body,
+    Duration repeatDurationInterval,
+    NotificationDetails notificationDetails, {
+    AndroidScheduleMode androidScheduleMode = AndroidScheduleMode.exact,
+    String? payload,
+  }) async {}
 }
 
 class FakeFlutterLocalNotificationsPlatform
