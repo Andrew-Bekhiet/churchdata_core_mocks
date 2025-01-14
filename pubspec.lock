@@ -195,7 +195,7 @@ packages:
     description:
       path: "."
       ref: master
-      resolved-ref: "9f43aaaee96eb0b08d519d509feadc5d8c4cbba0"
+      resolved-ref: "241163de7f69f9eb595bdcbad92fdbf82a1a6867"
       url: "https://github.com/Andrew-Bekhiet/churchdata_core"
     source: git
     version: "0.5.0"

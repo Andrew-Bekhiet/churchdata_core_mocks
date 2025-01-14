@@ -30,7 +30,7 @@ class BasicDataObject extends DataObject {
   Json toJson() {
     return {
       'Name': name,
-      'Color': color?.value,
+      'Color': color?.argbValue,
     };
   }
 }
